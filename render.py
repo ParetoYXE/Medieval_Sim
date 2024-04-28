@@ -158,8 +158,7 @@ class Renderer:
                     tile_rect = pygame.Rect(x * self.tile_size + middle_offset_x - scroll_x * self.tile_size, y * self.tile_size + middle_offset_y - scroll_y * self.tile_size, self.tile_size, self.tile_size)
                     self.screen.blit(self.tiles[36], tile_rect.topleft)
                 elif (x, y) in [(npc.x, npc.y) for npc in npcs]:
-                    npc_image = pygame.Surface((self.tile_size, self.tile_size))
-                    npc_image.fill((255, 0, 0))  # Red color for NPCs
+                    npc_image = self.player_image #pygame.Surface((self.tile_size, self.tile_size))
                     tile_rect = pygame.Rect(x * self.tile_size + middle_offset_x - scroll_x * self.tile_size, y * self.tile_size + middle_offset_y - scroll_y * self.tile_size, self.tile_size, self.tile_size)
                     self.screen.blit(npc_image, tile_rect.topleft)
                 else:
